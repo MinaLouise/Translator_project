@@ -1,24 +1,22 @@
-// data.js
-import React from 'react';
-
 function CountryList() {
+  n
   const countryCodes = [
-    { name: 'English'},
-    { name: 'Spanish'},
-    { name: 'Mandarin Chinese'},
-    { name: 'Hindi'},
-    { name: 'Arabic'},
-    { name: 'Portuguese'},
-    { name: 'German'},
-    { name: 'Japanese'},
-    { name: 'French'},
-    { name: 'Punjabi'},
-    { name: 'Vietnamese'},
+    'English',
+    'Spanish',
+    'Mandarin Chinese',
+    'Hindi',
+    'Arabic',
+    'Portuguese',
+    'German',
+    'Japanese',
+    'French',
+    'Punjabi',
+    'Vietnamese',
   ];
 
   return countryCodes.map((country, index) => (
-    <option key={index} value={country.code}>
-      {country.name}
+    <option key={index} value={country}>
+      {country}
     </option>
   ));
 }
