@@ -1,114 +1,95 @@
 .translator {
     width: 80%;
-    margin-left: 10%;
-  }
-  
-  .row-wrapper {
+    margin: 0 auto; /* Center the translator horizontally */
+}
+
+.row-wrapper {
     display: flex;
-  }
-  
-  .translator-container {
-    width: 50%;
-  }
-  
-  .text-box {
+    justify-content: space-between; /* Add space between translator containers */
+    align-items: flex-start; /* Align containers at the top */
+}
+
+.translator-container {
+    width: 48%; /* Slightly reduced width for better separation */
+    padding: 20px; /* Add padding for better spacing */
+    background: #f9f9f9; /* Background color for better contrast */
+    box-shadow: 2px 5px 10px -5px rgba(244, 95, 222, 0.75);
+    border-radius: 10px;
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.text-box {
     min-height: 200px;
-    width: 100%;
-    padding: 10px 15px;
-    padding-right: 80px;
+    width: 400px;
+    padding: 10px;
     font-size: 18px;
+    border: 2px solid #ccc;
     border-radius: 7px;
-  }
-  
-  textarea {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    box-shadow: -2px 5px 10px -5px #000000bf;
-    outline: none;
-    border: none;
     resize: none;
-  }
-  
-  textarea::placeholder,
-  .output-placeholder {
-    color: dimgray;
+}
+
+.text-box:focus {
+    outline: none;
+    border: 2px solid #e157acbf; /* Highlight the textarea when focused */
+}
+
+.text-box::placeholder,
+.output-placeholder {
+    color: #ccc;
     user-select: none;
     cursor: text;
-  }
-  
-  .input-form {
+}
+
+.input-form {
     position: relative;
-  }
-  
-  .icon-btn {
+}
+
+.icon-btn {
     position: absolute;
     font-size: 20px;
     cursor: pointer;
-    margin: 13.5px 20px;
+    margin: 10px;
     transition: 0.2s ease-in-out;
-    right: 0;
-  }
-  
-  .icon-btn:hover {
-    color: #696969bf;
-  }
-  
-  .speaker {
-    font-size: 27px;
-    bottom: 2px;
-    right: 30px;
-  }
-  
-  .copy-btn {
-    bottom: 5px;
-  }
-  
-  .copy-output-btn {
-    bottom: -2px;
-  }
-  
-  .output-box {
-    position: relative;
-    box-shadow: 2px 5px 10px -5px rgba(0, 0, 0, 0.75);
-  }
-  
-  .loading-output {
-    font-size: 20px;
-    font-weight: bold;
-    color: #6c757d;
-    letter-spacing: 2px;
-  }
-  
-  
-  .top-row {
+    right: 10px;
+}
+
+.icon-btn:hover {
+    color: #e157acbf;
+}
+
+.top-row {
     display: flex;
     align-items: center;
     height: 30px;
-    margin: 7px 0px;
-  }
-  
-  .btn-translate,
-  .top-row select {
+    margin-bottom: 10px;
+}
+
+.btn-translate,
+.top-row select {
     margin-left: auto;
     width: 7em;
-  }
-  
-  .translation-error {
+}
+
+.output-box {
+    position: relative;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 18px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+}
+
+.translation-error {
     color: #ff1234;
-  }
-  
-  @media (max-width: 1279px) {
-    .translator {
-      width: 100%;
-      margin-left: 0%;
-    }
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .translator-container {
-      width: 100%;
+        width: 100%; /* Full width on smaller screens */
     }
-  
+
     .row-wrapper {
-      flex-direction: column;
+        flex-direction: column;
     }
-  }
+}

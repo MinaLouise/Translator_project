@@ -7,45 +7,17 @@ const Translator = () => {
     const [inputText, setInputText] = useState('');
     const [outputLang, setOutputLang] = useState('ar');
     const [outputText, setOutputText] = useState('');
-    const [isTranslated, setIsTranslated] = useState();
+    const [isTranslated, setIsTranslated] = useState(null);
 
     const translate = () => {
-        console.log(outputLang);
-        const options = {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                'X-RapidAPI-Key': '65b9c82f65msha9305bceff58afbp1aa4d1jsn2e3ba4f1e9a8',
-                'X-RapidAPI-Host': 'microsoft-translator-text.p.rapidapi.com'
-            },
-            body: `[{"Text":"${inputText}"}]`
-        };
-
-        fetch(`${process.env.REACT_APP_Base_URL}${outputLang}${process.env.REACT_APP_Query_Params}`, options)
-            .then(response => {
-                if (response.status !== 200) {
-                    setIsTranslated(false);
-                    console.log("there's an error");
-                    return;
-                }
-                setIsTranslated(true);
-                response.json()
-                    .then(response => {
-                        const translatedText = response[0].translations[0].text;
-                        setOutputText(translatedText);
-                        console.log(translatedText);
-                    })
-            })
-            .catch(err => {
-                setIsTranslated(false);
-                console.error(err)
-            });
+        const apiKey = '65b9c82f65msha9305bceff58afbp1aa4d1jsn2e3ba4f1e9a8'; // Replace with your API key
+        const baseUrl = 'https://microsoft-translator-text.p.rapidapi.com/translate';
     }
 
     const clearInput = () => {
         setInputText('');
         setOutputText('');
-        setIsTranslated();
+        setIsTranslated(null);
     }
 
     return (
@@ -53,7 +25,7 @@ const Translator = () => {
             <div className="row-wrapper">
                 <div className="translator-container input-lang">
                     <div className="top-row">
-
+                        <h2>Input Text</h2>
                     </div>
                     <form className="input-form">
                         <textarea
@@ -61,10 +33,8 @@ const Translator = () => {
                             placeholder="Enter text (any language)"
                             onChange={e => setInputText(e.target.value)}
                             value={inputText}
-                        >
-                        </textarea>
-                        {
-                            inputText !== "" &&
+                        />
+                        {inputText !== "" &&
                             <AiOutlineClose
                                 className="icon-btn close-btn"
                                 onClick={clearInput}
@@ -74,8 +44,18 @@ const Translator = () => {
                 </div>
                 <div className="translator-container output-lang">
                     <div className="top-row">
+                        <h2>Translation</h2>
+                    </div>
+                    <div className="output-form">
+                        <textarea
+                            className="text-box output-text"
+                            readOnly
+                            value={outputText}
+                        />
+                    </div>
+                    <div className="output-controls">
                         <button
-                            className="btn btn-primary btn-translate"
+                            className="btn btn-translate"
                             onClick={translate}
                         >
                             Translate
@@ -93,17 +73,6 @@ const Translator = () => {
                             <option value="es">Spanish</option>
                         </select>
                     </div>
-                    <p className="text-box output-box">
-                        {
-                            isTranslated === false ?
-                                <span className="output-placeholder translation-error">Translation failed</span>
-                                :
-                                outputText === "" ?
-                                    <span className="output-placeholder">Select a language</span>
-                                    :
-                                    outputText
-                        }
-                    </p>
                 </div>
             </div>
         </section>
