@@ -1,3 +1,12 @@
+.App{
+    background-image: url(Images/tback.png);
+    /* filter: blur(6px); */
+  
+    height: 100%;
+  
+    background-position: center;
+}
+
 .translator {
     width: 80%;
     margin: 0 auto; /* Center the translator horizontally */
@@ -5,17 +14,20 @@
 
 .row-wrapper {
     display: flex;
-    justify-content: space-between; /* Add space between translator containers */
-    align-items: flex-start; /* Align containers at the top */
+    flex-direction: column; /* Add space between translator containers */
+    align-items: center; /* Align containers at the top */
 }
 
 .translator-container {
     width: 48%; /* Slightly reduced width for better separation */
     padding: 20px; /* Add padding for better spacing */
-    background: #f9f9f9; /* Background color for better contrast */
+    background: rgb(255, 245, 254); /* Background color for better contrast */
     box-shadow: 2px 5px 10px -5px rgba(244, 95, 222, 0.75);
-    border-radius: 10px;
-    margin: 0 auto; /* Center the container horizontally */
+    border-radius: 20px;
+    margin: 40pt auto; /* Center the container horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .text-box {
@@ -23,19 +35,19 @@
     width: 400px;
     padding: 10px;
     font-size: 18px;
-    border: 2px solid #ccc;
+    border: 2px solid #cccccc;
     border-radius: 7px;
     resize: none;
 }
 
 .text-box:focus {
     outline: none;
-    border: 2px solid #e157acbf; /* Highlight the textarea when focused */
+    border: 2px solid #e2339fbf; /* Highlight the textarea when focused */
 }
 
 .text-box::placeholder,
 .output-placeholder {
-    color: #ccc;
+    color: rgb(255, 116, 229);
     user-select: none;
     cursor: text;
 }
@@ -58,21 +70,31 @@
 }
 
 .top-row {
+    margin-top: 40px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     height: 30px;
     margin-bottom: 10px;
 }
 
 .btn-translate,
 .top-row select {
-    margin-left: auto;
+    margin-left: 0;
     width: 7em;
+    height: 2em;
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .output-box {
     position: relative;
-    margin-top: 10px;
+    margin-top: 20pt;
     padding: 10px;
     font-size: 18px;
     background: #fff;
@@ -84,10 +106,11 @@
     color: #ff1234;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
     .translator-container {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%; 
     }
+
 
     .row-wrapper {
         flex-direction: column;

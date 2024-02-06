@@ -55,58 +55,63 @@ const Translator = () => {
 
     return (
         <section className="translator">
+            <div className="images"></div>
             <div className="row-wrapper">
-                <div className="translator-container input-lang">
-                    <div className="top-row">
-                        <h2>Input Text</h2>
-                    </div>
-                    <form className="input-form">
-                        <textarea
-                            className="text-box input-text"
-                            placeholder="Enter text (any language)"
-                            onChange={handleInputChange}
-                            value={inputText}
-                        />
-                        {inputText !== "" &&
-                            <AiOutlineClose
-                                className="icon-btn close-btn"
-                                onClick={clearInput}
+            <div className="translator-container">
+                <div className=" input-lang">
+                        <div className="top-row">
+                            <h2>Input Text</h2>
+                        </div>
+                        <form className="input-form">
+                            <textarea
+                                className="text-box input-text"
+                                placeholder="Enter text (any language)"
+                                onChange={handleInputChange}
+                                value={inputText}
                             />
-                        }
-                    </form>
-                </div>
-                <div className="translator-container output-lang">
-                    <div className="top-row">
-                        <h2>Translation</h2>
+                            {inputText !== "" &&
+                                <AiOutlineClose
+                                    className="icon-btn close-btn"
+                                    onClick={clearInput}
+                                />
+                            }
+                        </form>
                     </div>
-                    <form className="output-form">
-                        <textarea
-                            className="text-box output-text"
-                            value={outputText}
-                            readOnly
-                        />
-                    </form>
-                </div>
-                <div className="controls">
-                    <button
-                        className="btn btn-translate"
-                        onClick={translate}
-                    >
-                        Translate
-                    </button>
-                    <select
-                        name="languages"
-                        id="languages"
-                        className="form-select form-select-sm"
-                        onChange={e => setOutputLang(e.target.value)}
-                    >
-                        <option value="ar">Arabic</option>
-                        <option value="en">English</option>
-                        <option value="fr">French</option>
-                        <option value="de">German</option>
-                        <option value="es">Spanish</option>
+                    <div className="controls">
+                        <button
+                            className="btn btn-translate"
+                            onClick={translate}>
+                            Translate
+                        </button>
+                        <select
+                            name="languages"
+                            id="languages"
+                            className="form-select form-select-sm"
+                            onChange={e => setOutputLang(e.target.value)}
+                        >
+                            <option value="ar">Arabic</option>
+                            <option value="en">English</option>
+                            <option value="fr">French</option>
+                            <option value="de">German</option>
+                            <option value="es">Spanish</option>
                     </select>
                 </div>
+                    <div className=" output-lang">
+                        <div className="top-row">
+                            <h2>Translation</h2>
+                        </div>
+                        <form className="output-form">
+                            <textarea
+                                className="text-box output-text"
+                                value={outputText}
+                                readOnly
+                            />
+                        </form>
+                    </div>
+                    
+            </div>
+                    
+                
             </div>
         </section>
     );
