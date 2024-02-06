@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/his-app/static/css/main.65d2b961.css",
-    "main.js": "/his-app/static/js/main.70df00ad.js",
-    "static/js/787.b1268d6b.chunk.js": "/his-app/static/js/787.b1268d6b.chunk.js",
-    "static/media/tback.png": "/his-app/static/media/tback.3a8ad524f042cf0f8f2f.png",
-    "index.html": "/his-app/index.html",
-    "main.65d2b961.css.map": "/his-app/static/css/main.65d2b961.css.map",
-    "main.70df00ad.js.map": "/his-app/static/js/main.70df00ad.js.map",
-    "787.b1268d6b.chunk.js.map": "/his-app/static/js/787.b1268d6b.chunk.js.map"
+    "main.css": "/Translator_project/static/css/main.5eb5d9ef.css",
+    "main.js": "/Translator_project/static/js/main.67c290b5.js",
+    "static/js/787.b1268d6b.chunk.js": "/Translator_project/static/js/787.b1268d6b.chunk.js",
+    "static/media/tback.png": "/Translator_project/static/media/tback.3a8ad524f042cf0f8f2f.png",
+    "index.html": "/Translator_project/index.html",
+    "main.5eb5d9ef.css.map": "/Translator_project/static/css/main.5eb5d9ef.css.map",
+    "main.67c290b5.js.map": "/Translator_project/static/js/main.67c290b5.js.map",
+    "787.b1268d6b.chunk.js.map": "/Translator_project/static/js/787.b1268d6b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.65d2b961.css",
-    "static/js/main.70df00ad.js"
+    "static/css/main.5eb5d9ef.css",
+    "static/js/main.67c290b5.js"
   ]
 }
