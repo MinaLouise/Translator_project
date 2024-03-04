@@ -1,9 +1,9 @@
 .App{
     background-image: url(Images/tback.png);
-    /* filter: blur(6px); */
   
-    height: 100%;
-  
+    height: 101%;
+  /* background-repeat: repeat; */
+    background-size: cover;
     background-position: center;
 }
 
